@@ -278,9 +278,10 @@ contract Bitcoin is MintableToken, BurnableToken {
   string public constant symbol = 'BTC';
   uint8 public constant decimals = 8;
   uint256 public constant InitialSupply = 21e6 * 1e8;
+  uint256 public totalSupply;
 
   function Bitcoin() public {
     totalSupply=InitialSupply;
-    balances[owner]=InitialSupply;
+    balances[msg.sender]=InitialSupply;
   }
 }
